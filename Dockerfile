@@ -4,7 +4,7 @@ ARG TARGETOS
 ARG TARGETARCH
 
 # renovate: datasource=github-releases depName=helm/helm extractVersion=v(?<version>.*)$
-ARG HELM_VERSION=3.18.3
+ARG HELM_VERSION=3.18.4
 ADD https://get.helm.sh/helm-v${HELM_VERSION}-${TARGETOS}-${TARGETARCH}.tar.gz /tmp/helm.tar.gz
 
 WORKDIR /out
