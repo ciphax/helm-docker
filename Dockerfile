@@ -11,7 +11,7 @@ WORKDIR /out
 RUN tar -xf /tmp/helm.tar.gz && mv ./**/helm helm && chmod +x helm
 
 # renovate: datasource=endoflife-date depName=kubernetes
-ARG KUBECTL_VERSION=1.34.0
+ARG KUBECTL_VERSION=1.34.1
 ADD https://dl.k8s.io/release/v${KUBECTL_VERSION}/bin/${TARGETOS}/${TARGETARCH}/kubectl kubectl
 RUN chmod +x kubectl
 
