@@ -1,4 +1,4 @@
-FROM alpine@sha256:c6b073f8e9e58d881f6ffba6ebf3b9ebd60b9e7d6e8337018c0e68bb5c356873 AS extractor
+FROM alpine@sha256:71e9b7bae160ba167fa17414401b94cbcdaf3c32feeab9298bd794a2a0614c35 AS extractor
 
 ARG TARGETOS
 ARG TARGETARCH
@@ -16,7 +16,7 @@ ADD https://dl.k8s.io/release/v${KUBECTL_VERSION}/bin/${TARGETOS}/${TARGETARCH}/
 RUN chmod +x kubectl
 
 
-FROM alpine@sha256:c6b073f8e9e58d881f6ffba6ebf3b9ebd60b9e7d6e8337018c0e68bb5c356873
+FROM alpine@sha256:71e9b7bae160ba167fa17414401b94cbcdaf3c32feeab9298bd794a2a0614c35
 
 COPY --from=extractor /out/helm /usr/bin/
 COPY --from=extractor /out/kubectl /usr/bin/
